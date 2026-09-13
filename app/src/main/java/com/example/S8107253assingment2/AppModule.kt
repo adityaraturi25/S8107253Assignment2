@@ -3,7 +3,7 @@ package com.example.S8107253assingment2
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
+import org.koin.androidx.viewmodel.dsl.viewModel
 val appModule = module {
     single {
         Retrofit.Builder()
@@ -15,4 +15,6 @@ val appModule = module {
     single<ApiService> {
         get<Retrofit>().create(ApiService::class.java)
     }
+    single<AuthRepository> { NetworkAuthRepository(get()) }
+    viewModel { LoginViewModel(get()) }
 }
