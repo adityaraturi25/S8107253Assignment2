@@ -42,4 +42,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
 }
