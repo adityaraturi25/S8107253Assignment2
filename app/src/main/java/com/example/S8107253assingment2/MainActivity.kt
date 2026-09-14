@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,7 +54,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 is LoginUiState.Success -> {
                     errorText.visibility = View.GONE
-                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+                    startActivity(
+                        Intent(this, DashboardActivity::class.java)
+                            .putExtra("keypass", state.keypass)
+                    )
+                    finish()
                 }
                 else -> errorText.visibility = View.GONE
             }
