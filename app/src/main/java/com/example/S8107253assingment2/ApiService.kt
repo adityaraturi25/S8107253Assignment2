@@ -1,6 +1,5 @@
 package com.example.S8107253assingment2
 
-import com.google.gson.JsonObject
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -16,7 +15,7 @@ data class LoginResponse(
 )
 
 data class DashboardResponse(
-    val entities: List<JsonObject>,
+    val entities: List<Map<String, Any?>>,
     val entityTotal: Int
 )
 
