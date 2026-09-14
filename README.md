@@ -20,6 +20,14 @@ Android application for NIT3213 Assignment 2. The app authenticates through the 
 
 The app uses `https://nit3213apinew.onrender.com/`, with `POST /footscray/auth` for login and `GET /dashboard/{keypass}` for dashboard items. No credentials are stored in the project.
 
+## Dependencies and setup
+
+- Install Android Studio and the Android SDK requested during Gradle sync.
+- Open the project in Android Studio with an internet connection. Gradle downloads the dependencies automatically; no manual library installation is needed.
+- The app uses Retrofit 3.0.0, Moshi converter 3.0.0, Moshi Kotlin 1.15.2, and OkHttp logging interceptor 5.5.0.
+- It also uses Koin for dependency injection, AndroidX ViewModel/LiveData and RecyclerView, and Material Components. Their versions are managed in the Gradle files.
+- No API key or credentials need to be added to the project. To log in, use the student ID and first name supplied for the unit.
+
 ## Tests
 
 Run the unit tests from Android Studio by right-clicking the `test` folder and selecting **Run Tests**, or run `gradlew.bat test` from the project folder on Windows.
