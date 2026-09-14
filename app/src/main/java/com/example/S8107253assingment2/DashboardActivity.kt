@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import android.content.Intent
+import org.json.JSONObject
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -35,8 +37,10 @@ class DashboardActivity : AppCompatActivity() {
         val retryButton = findViewById<MaterialButton>(R.id.retryButton)
         val list = findViewById<RecyclerView>(R.id.entitiesList)
 
-        val adapter = EntityAdapter { _ ->
-            Toast.makeText(this, "Details screen is next", Toast.LENGTH_SHORT).show()
+        val adapter = EntityAdapter { entity ->
+            val intent = Intent(this, DetailsActivity::class.java)
+            intent.putExtra("entity", JSONObject(entity).toString())
+            startActivity(intent)
         }
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = adapter
