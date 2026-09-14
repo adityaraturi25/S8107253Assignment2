@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,7 +26,13 @@ class DashboardActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { view, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(bars.left, bars.top, bars.right, bars.bottom)
+            val padding = (20 * resources.displayMetrics.density).toInt()
+            view.setPadding(
+                bars.left + padding,
+                bars.top + padding,
+                bars.right + padding,
+                bars.bottom + padding
+            )
             insets
         }
 
