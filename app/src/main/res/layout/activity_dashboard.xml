@@ -1,39 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF8F2"
     android:orientation="vertical"
     android:padding="20dp">
 
-    <TextView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dashboard"
-        android:textAppearance="?attr/textAppearanceHeadlineMedium"
-        android:textStyle="bold" />
+        app:cardBackgroundColor="#FFE6D3"
+        app:cardCornerRadius="26dp"
+        app:cardElevation="0dp">
 
-    <TextView
-        android:id="@+id/entityCount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="16dp"
-        android:text="Your items"
-        android:textAppearance="?attr/textAppearanceBodyMedium" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TASTE THE WORLD"
+                android:textColor="#A75338"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Explore the menu"
+                android:textColor="#30231E"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/entityCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Your items"
+                android:textColor="#69554B"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <ProgressBar
         android:id="@+id/dashboardProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp"
         android:visibility="gone" />
 
     <TextView
         android:id="@+id/dashboardMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#69554B"
         android:visibility="gone" />
 
     <com.google.android.material.button.MaterialButton
@@ -42,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Retry"
+        app:backgroundTint="#BE6446"
         android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -50,6 +80,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:clipToPadding="false"
-        android:paddingTop="8dp" />
+        android:paddingTop="18dp" />
 
 </LinearLayout>

@@ -4,43 +4,99 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF4E9"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
+        android:gravity="top"
+        android:paddingTop="48dp"
         android:orientation="vertical"
         android:padding="24dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#4A281F"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Food"
+                    android:text="🍽️"
+                    android:textSize="42sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="TASTE THE WORLD"
+                    android:textColor="#FFB86B"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="A world of flavours"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Your next food discovery starts here."
+                    android:textColor="#F8D9C6"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome"
-            android:textAppearance="?attr/textAppearanceHeadlineMedium"
+            android:layout_marginTop="32dp"
+            android:text="Welcome back"
+            android:textColor="#352018"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="32dp"
-            android:text="Sign in to view your dashboard"
-            android:textAppearance="?attr/textAppearanceBodyLarge" />
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="24dp"
+            android:text="Sign in to explore your dashboard"
+            android:textColor="#70564A"
+            android:textSize="15sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/usernameLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Student ID (without s)">
+            android:hint="Student ID (without s)"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxStrokeColor="#B84F2B">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/usernameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:maxLength="8" />
+                android:maxLength="8"
+                android:textColor="#352018" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -48,15 +104,18 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="14dp"
             android:hint="First name"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxStrokeColor="#B84F2B"
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="#352018" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -64,16 +123,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:textColor="?attr/colorError"
+            android:textColor="#B3261E"
             android:visibility="gone" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_marginTop="24dp"
-            android:minHeight="48dp"
-            android:text="Log in" />
+            android:text="Explore dishes"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:backgroundTint="#B84F2B"
+            app:cornerRadius="18dp" />
 
         <ProgressBar
             android:id="@+id/loadingProgress"
